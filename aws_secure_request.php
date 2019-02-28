@@ -15,12 +15,12 @@ function calcualteAwsSignatureAndReturnHeaders($host, $uri, $requestUrl,
 			$accessKey, $secretKey, $region, $service, 
 			$httpRequestMethod, $data, $debug = TRUE){
 
-	$terminationString		= 'aws4_request';
-	$algorithm 				= 'AWS4-HMAC-SHA256';
-	$phpAlgorithm 			= 'sha256';
-	$canonicalURI			= $uri;
+	$terminationString	= 'aws4_request';
+	$algorithm 		= 'AWS4-HMAC-SHA256';
+	$phpAlgorithm 		= 'sha256';
+	$canonicalURI		= $uri;
 	$canonicalQueryString	= '';
-	$signedHeaders			= 'content-type;host;x-amz-date';
+	$signedHeaders		= 'content-type;host;x-amz-date';
 
 	$currentDateTime = new DateTime('UTC');
 	$reqDate = $currentDateTime->format('Ymd');
